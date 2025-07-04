@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Fetch assistant response from FastAPI backend
   async function getAssistantResponse(userMessage) {
     console.log("API 요청 시작");
-    const url = `${import.meta.env.VITE_API_ENDPOINT}/ask`;
+    const url = `${import.meta.env.API_ENDPOINT}/ask`;
 
     try {
       const response = await fetch(url, {
