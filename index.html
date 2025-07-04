@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>시큐어 코딩 챗봇</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+    
+    <!-- highlight.js CSS 테마 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    
+    <!-- 마크다운 라이브러리 CDN -->
+    <!-- highlight.js 라이브러리 -->
+    <!-- 주요 언어 팩들 -->
+</head>
+
+<body class="h-screen flex flex-col bg-gray-100">
+    <!-- Header -->
+    <header
+        class="p-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white flex items-center justify-between">
+        <div class="flex items-center space-x-4">
+            <h1 class="text-xl font-semibold">시큐어 코딩 챗봇</h1>
+            <button id="reset-btn" 
+                    class="bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-medium px-3 py-1 rounded-md transition duration-200 text-sm">
+                RESET
+            </button>
+        </div>
+        <span class="text-sm opacity-90">Powered by Parcel & Tailwind</span>
+    </header>
+
+    <!-- Main chat area -->
+    <main id="chat-container" class="flex-1 overflow-y-auto p-4 chat-scroll">
+        <!-- Messages will be dynamically inserted here -->
+    </main>
+
+    <!-- Input area -->
+    <footer class="border-t border-gray-300 bg-white p-4">
+        <form id="message-form" class="flex items-start space-x-2">
+            <textarea id="user-input" 
+                      class="flex-1 border border-gray-300 rounded-md p-3 outline-none focus:border-blue-500 resize-none font-mono"
+                      placeholder="코드를 입력하세요... (Shift+Enter로 줄바꿈, Enter로 전송)"
+                      rows="4"></textarea>
+            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition flex-shrink-0">
+                Send
+            </button>
+        </form>
+    </footer>
+
+    <script>
+        // RESET 버튼 기능
+        document.addEventListener('DOMContentLoaded', () => {
+            const resetBtn = document.getElementById('reset-btn');
+            resetBtn.addEventListener('click', () => {
+                window.location.reload();
+            });
+        });
+    </script>
+    <script type="module" src="./src/app.js"></script>
+</body>
+
+</html>
